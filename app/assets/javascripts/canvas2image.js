@@ -18,7 +18,7 @@ var Canvas2Image = function () {
     };
   }();
 
-  var downloadMime = 'image/octet-stream';
+  var downloadMime = 'image/png';
 
   function scaleCanvas (canvas, width, height) {
     var w = canvas.width,

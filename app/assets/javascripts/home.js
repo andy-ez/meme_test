@@ -52,8 +52,10 @@ $(function(){
                   document.body.appendChild(canvas);
 
                   // Convert and download as image 
-                  Canvas2Image.saveAsPNG(canvas); 
+                  // Canvas2Image.saveAsPNG(canvas);
                   $("#img-out").append(canvas);
+                  $("#picture").val(canvas.toDataURL("image/png"));
+                  $("#pic_form").submit();
                   // Clean up 
                   //document.body.removeChild(canvas);
               }

@@ -5,7 +5,7 @@
     %meta(property="og:title" content="My Meme")
     %meta(property="og:type" content="website")
     %meta{:property => "og:image", :content=> "#{@src}"}
-    <meta property="og:description" content="My very own meme"/>
+    %meta(property="og:description" content="My very own meme")
     %title Meme
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all'

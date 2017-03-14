@@ -20,5 +20,7 @@
 
   =button_tag "Save PNG", id:"btnSave", class: 'btn btn-success'
   #img-out
+  = form_tag '/create_pic', method: :post, id: 'pic_form' do
+    = hidden_field_tag :picture, nil, id: 'picture'
   %img(src="#{@src}")
   = social_share_button_tag(:image => "#{@src}", :'data-type' => 'photo')
