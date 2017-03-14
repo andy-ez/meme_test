@@ -12,4 +12,10 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
+    %header
+      %div.header
+        %div.content
+          =link_to 'Home', '/', class: 'brand'
+          %button.c-hamburger.c-hamburger--htx
+            %span toggle menu
     = yield

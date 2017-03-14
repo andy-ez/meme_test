@@ -29,11 +29,16 @@ $(function(){
               bg_url = e.target.result
               $('.photoPreview').css('background', 'url(' + bg_url + ')');
               $('.photoUpload, #uploadClick').hide();
+              $('#rotate').show();
           }
           $('.deletePhoto').show();
           reader.readAsDataURL(input.files[0]);
       }
   }
+
+  $('#rotate').click(function(){
+    $('.photoPreview').toggleClass('transform')
+  });
 
   $('.deletePhoto').click(function() {
     $('.deletePhoto').hide();

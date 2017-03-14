@@ -1,17 +1,22 @@
 
 .container 
+  %header.alert.flash.alert-info
+    %h3 Create Your Meme
+    %ul
+      %li
+        Fill in the blanks
+      %li
+        Upload Your Image
+      %li
+        Save and Share
   .layer
     #top_text
       I want to be as great as
-      %br
-      %em
-        = text_field_tag :me, nil, placeholder: '______________'
+      = text_field_tag :me, nil, placeholder: '....'
     #bottom_text
       So I
-      %br 
-      %em 
-        = text_field_tag :what, nil, placeholder: '______________'
-    = image_tag '', class: 'imageLayer'    
+      = text_field_tag :what, nil, placeholder: '....'
+    = image_tag 'wood.jpg', class: 'imageLayer'    
     .photoPreview
       / %i.fa.fa-upload.photoUpload
       / %p#uploadClick Click to Upload Profile Picture
@@ -20,6 +25,9 @@
   %div.upload
     %i.fa.fa-upload.photoUpload
     %p Upload Your Own Image
+  %button#rotate.btn.btn-info.form-control
+    %i.fa.fa-repeat
+    Rotate Image
 
   =button_tag "Save Image", id:"btnSave", class: 'btn btn-success form-control'
   #img-out
