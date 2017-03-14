@@ -9,6 +9,7 @@ class PagesController < ApplicationController
     a.meme_data_uri = params[:picture]
     a.save
     @src = "http://ae-meme.herokuapp.com" + a.meme.url
+    # @src = a.meme.url
     render :create_pic
   end
 

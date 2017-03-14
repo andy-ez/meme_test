@@ -36,8 +36,23 @@ $(function(){
       }
   }
 
-  $('#rotate').click(function(){
-    $('.photoPreview').toggleClass('transform')
+  // $('#rotate').click(function(){
+  //   $('.photoPreview').toggleClass('transform')
+  // });
+
+  window.rotation = 0;
+
+  jQuery.fn.rotate = function(degrees) {
+    $('.photoPreview').css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
+                 '-moz-transform' : 'rotate('+ degrees +'deg)',
+                 '-ms-transform' : 'rotate('+ degrees +'deg)',
+                 'transform' : 'rotate('+ degrees +'deg)'});
+      return $('photoPreview');
+  };
+
+  $('#rotate').click(function() {
+      rotation += 90;
+      $(this).rotate(rotation);
   });
 
   $('.deletePhoto').click(function() {
