@@ -1,2 +1,3 @@
-%img{ :src => @src }
-= social_share_button_tag("My meme", :url=> "#{@src}", :'data-type' => 'photo', :desc=> "Help")
+.container(style= 'text-align: center')
+  %img{ :src => @src }
+  = social_share_button_tag("My meme", :url=> "#{@src}", :'data-type' => 'photo', :desc=> "Help")

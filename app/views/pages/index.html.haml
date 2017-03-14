@@ -17,10 +17,11 @@
       / %p#uploadClick Click to Upload Profile Picture
   = file_field_tag :avatar, hide_label: true, accept: 'image/png,image/gif,image/jpeg, image/jpg', id: 'uploadAvatar', style: 'display: none;'
   %p.deletePhoto Delete
+  %div.upload
+    %i.fa.fa-upload.photoUpload
+    %p Upload Your Own Image
 
-  =button_tag "Save PNG", id:"btnSave", class: 'btn btn-success'
+  =button_tag "Save Image", id:"btnSave", class: 'btn btn-success form-control'
   #img-out
   = form_tag '/create_pic', method: :post, id: 'pic_form' do
     = hidden_field_tag :picture, nil, id: 'picture'
-  %img(src="#{@src}")
-  = social_share_button_tag(:image => "#{@src}", :'data-type' => 'photo')

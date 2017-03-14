@@ -1,6 +1,9 @@
 $(function(){
   bg_url = ''
   $('.deletePhoto').hide();
+  $('.upload').click(function(){
+    $('.photoPreview').trigger('click');
+  })
 
   if ($('.profilePhoto').length){
     $('.photoPreview').hide()
@@ -11,7 +14,6 @@ $(function(){
     $('.photoPreview').show().trigger('click');
   })
     $('.photoPreview').click(function(){
-      console.log("in da house");
       $(this).attr('disabled', 'true');
       $('#uploadAvatar').trigger('click');
       $("#uploadAvatar").change(function(){
@@ -53,7 +55,7 @@ $(function(){
 
                   // Convert and download as image 
                   // Canvas2Image.saveAsPNG(canvas);
-                  $("#img-out").append(canvas);
+                  // $("#img-out").append(canvas);
                   $("#picture").val(canvas.toDataURL("image/png"));
                   $("#pic_form").submit();
                   // Clean up 
