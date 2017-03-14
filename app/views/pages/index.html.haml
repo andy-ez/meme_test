@@ -1,0 +1,24 @@
+
+.container 
+  .layer
+    #top_text
+      I want to be as great as
+      %br
+      %em
+        = text_field_tag :me, nil, placeholder: '______________'
+    #bottom_text
+      So I
+      %br 
+      %em 
+        = text_field_tag :what, nil, placeholder: '______________'
+    = image_tag '', class: 'imageLayer'    
+    .photoPreview
+      / %i.fa.fa-upload.photoUpload
+      / %p#uploadClick Click to Upload Profile Picture
+  = file_field_tag :avatar, hide_label: true, accept: 'image/png,image/gif,image/jpeg, image/jpg', id: 'uploadAvatar', style: 'display: none;'
+  %p.deletePhoto Delete
+
+  =button_tag "Save PNG", id:"btnSave", class: 'btn btn-success'
+  #img-out
+  %img(src="#{@src}")
+  = social_share_button_tag(:image => "#{@src}", :'data-type' => 'photo')
